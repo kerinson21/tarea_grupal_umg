@@ -39,19 +39,6 @@ namespace JuegoSnake.clases.ColaArreglo
             }
         }
 
-
-
-        private static void MuestraPunteo(int punteo)
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.SetCursorPosition(1, 0);
-            Console.Write($"Puntuacion: {punteo.ToString("00000000")}");
-        }
-
-
-
-
         private static Direction ObtieneDireccion(Direction direccionAcutal)
         {
             if (!Console.KeyAvailable) return direccionAcutal;
@@ -121,7 +108,7 @@ namespace JuegoSnake.clases.ColaArreglo
                 return false;
             }
 
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(lastPoint.X + 1, lastPoint.Y + 1);
             Console.WriteLine(" ");
 
@@ -177,8 +164,8 @@ namespace JuegoSnake.clases.ColaArreglo
         {
 
             Archivo archivo = new Archivo();
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(1, 0);
             Console.Write($"Puntuacion: {punteo.ToString("00000000")}");
             Console.SetCursorPosition(25, 0);

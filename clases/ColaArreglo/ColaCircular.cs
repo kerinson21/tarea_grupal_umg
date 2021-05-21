@@ -106,10 +106,7 @@ namespace JuegoSnake.clases.ColaArreglo
 
         public int Tamaño()
         {
-            int tam;
-            tam = tamaño;
             return tamaño;
-           
         }
 
 

@@ -193,7 +193,7 @@ namespace JuegoSnake.clases
             var posiciónComida = Point.Empty;
             var tamañoPantalla = new Size(60, 20);
             var culebrita = new Queue<Point>();
-            var longitudCulebra = 10; //modificar estos valores y ver qué pasa
+            var longitudCulebra = 3; //modificar estos valores y ver qué pasa
             var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
             culebrita.Enqueue(posiciónActual);
             var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
@@ -214,10 +214,10 @@ namespace JuegoSnake.clases
                     if (posiciónActual.Equals(posiciónComida))
                     {
                         posiciónComida = Point.Empty;
-                        longitudCulebra++; //modificar estos valores y ver qué pasa
+                        longitudCulebra = longitudCulebra + 5; //modificar estos valores y ver qué pasa
                         punteo += 10; //modificar estos valores y ver qué pasa
                         MuestraPunteoK(punteo, vidas);
-                        velocidad -= 10;
+                        //velocidad -= 10;
                     }
 
                     if (posiciónComida == Point.Empty) //entender qué hace esta linea

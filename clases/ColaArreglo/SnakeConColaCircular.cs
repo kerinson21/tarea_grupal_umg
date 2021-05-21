@@ -100,7 +100,6 @@ namespace JuegoSnake.clases.ColaArreglo
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
 
-            //if (culebra.Any(posiciónObjetivo)) return false;
             if (culebra.Any(posiciónObjetivo))  return false;
 
 
@@ -166,8 +165,8 @@ namespace JuegoSnake.clases.ColaArreglo
         {
 
             Archivo archivo = new Archivo();
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(1, 0);
             Console.Write($"Puntuacion: {punteo.ToString("00000000")}");
             Console.SetCursorPosition(25, 0);
@@ -192,7 +191,7 @@ namespace JuegoSnake.clases.ColaArreglo
             var posiciónComida = Point.Empty;
             var tamañoPantalla = new Size(60, 20);
             var culebrita = new ColaCircular();
-            var longitudCulebra = 10; //modificar estos valores y ver qué pasa
+            var longitudCulebra = 3; //modificar estos valores y ver qué pasa
             var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
             culebrita.insertar(posiciónActual);
             var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa

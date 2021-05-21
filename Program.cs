@@ -19,15 +19,15 @@ namespace JuegoSnake
             //SnakeConBicola bicola = new SnakeConBicola();
             //bicola.jugarConIntentos();
 
-            SnakeConColaCircular colaCircular = new SnakeConColaCircular();
-            colaCircular.jugarConIntentos();
+            //SnakeConColaCircular colaCircular = new SnakeConColaCircular();
+            //colaCircular.jugarConIntentos();
 
-            //SnakeConColaLineal colaLineal = new SnakeConColaLineal();
-            //colaLineal.jugarConIntentos();
+            SnakeConColaLineal colaLineal = new SnakeConColaLineal();
+            colaLineal.jugarConIntentos();
 
             //SnakeColaConLista colaConLista = new SnakeColaConLista();
             //colaConLista.jugarConIntentos();
-            
+
         }
     }
 }

@@ -32,13 +32,11 @@ namespace JuegoSnake.clases.ColaLista
             a = new Nodo(elemento);
             if (colaVacia())
             {
-
-                frente = a;  
+                frente = a;
             }
             else
             {
-                
-                fin.siguiente = a;
+                fin.siguiente = a;   
             }
             fin = a;
             tamaño++;
@@ -99,18 +97,21 @@ namespace JuegoSnake.clases.ColaLista
 
         public int Tamaño()
         {
+            int tam;
+            tam = tamaño;
             return tamaño;
-        }
-       
 
-        public bool busquda(Point elemento)
+        }
+
+
+        public bool busquda(Point elemento, bool actual)
         {
             Nodo aux = frente;
             bool encontrado = false;
             while(aux.siguiente != null)
             {
                 aux = aux.siguiente;
-                if(aux.elemento.X == elemento.X && aux.elemento.Y == elemento.Y)
+                if(aux.elemento.X == elemento.X && aux.elemento.Y == elemento.Y && actual == true)
                 {
                     encontrado = true;
                 }

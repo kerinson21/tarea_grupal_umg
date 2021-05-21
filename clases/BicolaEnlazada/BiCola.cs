@@ -31,7 +31,7 @@ namespace JuegoSnake.clases.BicolaEnlazada
         }
 
         //Quitar elemento
-        public Object quitarFrente()
+        public Point quitarFrente()
         {
             return quitar();
         }
@@ -39,9 +39,9 @@ namespace JuegoSnake.clases.BicolaEnlazada
         //Retirar elemento al final
         //Metodo propio de bicola
         //Es necesario hacer una iteracion de la bicola completa para llegar del nodo anterior al final, para despues enlazar y ajustar la cola
-        public Object quitarFinal()
+        public Point quitarFinal()
         {
-            Object aux;
+            Point aux;
             if (colaVacia())
             {
                 if (frente == fin)//La bicola solo tiene un nodo
@@ -71,13 +71,13 @@ namespace JuegoSnake.clases.BicolaEnlazada
 
         //Retorna el valor que se encuentra en el primer elemento o frente de la cola
         //Devuelve el valor que esta en frente de la bicola
-        public Object frenteCola()
+        public Point frenteCola()
         {
             return frenteCola();
         }
 
         //Devolver el final de la cola el ultimo valor de la cola
-        public Object finalBicola()
+        public Point finalBicola()
         {
             if (colaVacia())
             {
@@ -102,43 +102,12 @@ namespace JuegoSnake.clases.BicolaEnlazada
         //Conteo de elementos
         public int numElementosBicola()
         {
-            int n;
-            Nodo a = frente;
-            if (biColaVacia())
-            {
-                n = 0;
-            }
-            else
-            {
-                n = 1;
-                while (a != fin)
-                {
-                    n++;
-                    a = a.siguiente;
-                }
-
-            }
-            return n;
+            return Tamaño();
         }
 
-        /*public bool Any(Point x)
+        public bool Any(Point elemento, bool posicion)
         {
-            int i = 0, cont = 0;
-            Nodo aux = frente;
-            bool flag;
-            while (aux != null)
-            {
-                Point a = (Point)aux.elemento;
-                flag = ((a.X == x.X) && (a.Y == x.Y));
-                int z = (flag == true) ? cont++ : cont + 0;
-                i++;
-            }
-            return (cont != 0) ? true : false;
-        }
-*/
-        public bool Any(Point elemento)
-        {
-            return busquda(elemento);
+            return busquda(elemento,posicion);
         }
 
     }//end class

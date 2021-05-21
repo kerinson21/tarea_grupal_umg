@@ -59,7 +59,6 @@ namespace JuegoSnake.clases.ColaArreglo
                 tamaño--;
                 return listaCola[frente++];
                 
-
             }
             else
             {
@@ -104,8 +103,7 @@ namespace JuegoSnake.clases.ColaArreglo
 
         public int Tamaño()
         {
-            int tam;
-            tam = tamaño;
+           
             return tamaño;
 
         }

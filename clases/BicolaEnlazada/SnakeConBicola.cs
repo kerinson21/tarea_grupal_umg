@@ -114,7 +114,7 @@ namespace JuegoSnake.clases.BicolaEnlazada
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
 
-            if (culebra.Any(posiciónObjetivo)) return false;///////////////////
+            if (culebra.Any(posiciónObjetivo, posiciónObjetivo.Equals(posiciónObjetivo))) return false;///////////////////
            
 
             if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
@@ -136,7 +136,6 @@ namespace JuegoSnake.clases.BicolaEnlazada
             // Quitar cola
             if (culebra.numElementosBicola() > longitudCulebra)////////////////////////////////////////////
             {
-               
                 var removePoint = (Point) culebra.quitar();////////////////////////////////////////////////
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(removePoint.X + 1, removePoint.Y + 1);

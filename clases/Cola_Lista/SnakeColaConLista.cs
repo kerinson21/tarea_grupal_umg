@@ -101,7 +101,7 @@ namespace JuegoSnake.clases.Cola_Lista
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
  
-            if (culebra.busquda(posiciónObjetivo)) return false;
+            if (culebra.busquda(posiciónObjetivo, posiciónObjetivo.Equals(posiciónObjetivo))) return false;
 
             if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
                     || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
@@ -109,13 +109,13 @@ namespace JuegoSnake.clases.Cola_Lista
                 return false;
             }
 
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(lastPoint.X + 1, lastPoint.Y + 1);
             Console.WriteLine(" ");
 
             culebra.insertar(posiciónObjetivo);///////////////////////////////////
 
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(posiciónObjetivo.X + 1, posiciónObjetivo.Y + 1);
             Console.Write(" ");
 
@@ -123,11 +123,11 @@ namespace JuegoSnake.clases.Cola_Lista
             // Quitar cola
             if (culebra.Tamaño() > longitudCulebra)//////////////////////////////////////////
             {
-
                 var removePoint = (Point)culebra.quitar();////////////////////////////////////////////////
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(removePoint.X + 1, removePoint.Y + 1);
                 Console.Write(" ");
+                
             }
             return true;
         }
@@ -149,13 +149,13 @@ namespace JuegoSnake.clases.Cola_Lista
                     && Math.Abs(x - cabezaCulebra.X) + Math.Abs(y - cabezaCulebra.Y) > 8)
                 {
                     lugarComida = new Point(x, y);
-                    Console.Beep(659, 125); Console.Beep(659, 125);
+                    Console.Beep(659, 125);
 
                 }
 
             } while (lugarComida == Point.Empty);
 
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(lugarComida.X + 1, lugarComida.Y + 1);
             Console.Write(" ");
 
@@ -166,8 +166,8 @@ namespace JuegoSnake.clases.Cola_Lista
         {
 
             Archivo archivo = new Archivo();
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(1, 0);
             Console.Write($"Puntuacion: {punteo.ToString("00000000")}");
             Console.SetCursorPosition(25, 0);
@@ -193,7 +193,7 @@ namespace JuegoSnake.clases.Cola_Lista
             var posiciónComida = Point.Empty;
             var tamañoPantalla = new Size(60, 20);
             var culebrita = new ColaConLista();
-            var longitudCulebra = 10; //modificar estos valores y ver qué pasa
+            var longitudCulebra = 5; //modificar estos valores y ver qué pasa
             var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
             culebrita.insertar(posiciónActual);
             var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
@@ -214,10 +214,10 @@ namespace JuegoSnake.clases.Cola_Lista
                     if (posiciónActual.Equals(posiciónComida))
                     {
                         posiciónComida = Point.Empty;
-                        longitudCulebra++; //modificar estos valores y ver qué pasa
+                        longitudCulebra = longitudCulebra + 10; //modificar estos valores y ver qué pasa
                         punteo += 10; //modificar estos valores y ver qué pasa
                         MuestraPunteoK(punteo, vidas);
-                        velocidad -= 10;
+                        //velocidad -= 10;
                     }
 
                     if (posiciónComida == Point.Empty) //entender qué hace esta linea
